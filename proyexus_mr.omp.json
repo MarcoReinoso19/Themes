@@ -23,8 +23,8 @@
                         "mint": "\uf30f",
                         "opensuse": "\uf314",
                         "raspbian": "\uf315",
-                        "ubuntu": "\uf31c",
-                        "windows": "\ue70f"
+                        "ubuntu": "\uf31b",
+                        "windows": "\ue62a"
                     },
                     "style": "diamond",
                     "template": " {{ if .WSL }}\ue712 on {{ end }}{{ .Icon }} ",
@@ -32,18 +32,18 @@
                 },
                 {
                     "background": "#22add3",
-                    "foreground": "#011627",
+                    "foreground": "#333333",
                     "powerline_symbol": "\ue0b0",
                     "style": "powerline",
-                    "template": " \uf489 {{ .Name }} ",
+                    "template": " \uf68c {{ .Name }} ",
                     "type": "shell"
                 },
                 {
                     "background": "#42C6CC",
-                    "foreground": "#011627",
+                    "foreground": "#333333",
                     "powerline_symbol": "\ue0b0",
                     "style": "powerline",
-                    "template": " \uea7a {{ .HostName}}",
+                    "template": " \uea7a {{ .HostName}} ",
                     "type": "session"
                 },
                 {
@@ -51,11 +51,43 @@
                     "background_templates": [
                         "{{ if not .Root }} #F59C9D {{ end }}"
                     ],
-                    "foreground": "#011627",
+                    "foreground": "#333333",
                     "powerline_symbol": "\ue0b0",
                     "style": "powerline",
                     "template": "{{if .Root }} \uf09c admin {{ else }} \uf023 user {{ end }}",
                     "type": "session"
+                },
+                {
+                    "background": "#86BBD8",
+                    "foreground": "#333333",
+                    "powerline_symbol": "\ue0b0",
+                    "style": "powerline",
+                    "template": " \uf898 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+                    "type": "node"
+                },
+                {
+                    "background": "#E4ECA6",
+                    "foreground": "#333333",
+                    "powerline_symbol": "\uE0B0",
+                    "style": "powerline",
+                    "properties": {
+                        "display_version": true,
+                        "display_virtual_env": true,
+                        "display_mode": "context"
+                    },
+                    "template": " \ue235 {{ .Full }} ",
+                    "type": "python"
+                },
+                {
+                    "type": "angular",
+                    "style": "powerline",
+                    "powerline_symbol": "\uE0B0",
+                    "foreground": "#000000",
+                    "background": "#1976d2",
+                    "properties": {
+                        "display_mode": "files"
+                    },
+                    "template": " \uE753 {{ .Full }} "
                 },
                 {
                     "type": "cmake",
@@ -73,7 +105,7 @@
                         "{{ if gt .Ahead 0 }}#B787D7{{ end }}",
                         "{{ if gt .Behind 0 }}#B787D7{{ end }}"
                     ],
-                    "foreground": "#011627",
+                    "foreground": "#333333",
                     "powerline_symbol": "\ue0b0",
                     "properties": {
                         "branch_icon": "\uf126 ",
@@ -83,7 +115,7 @@
                         "fetch_worktree_count": true
                     },
                     "style": "powerline",
-                    "template": " {{ .UpstreamIcon }} {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#CAEBE1> \uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
+                    "template": " {{ .UpstreamIcon }} {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#CAEBE1> \uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }}{{ if gt .WorktreeCount 0}} \uf1bb {{ .WorktreeCount }}{{ end }} ",
                     "type": "git"
                 }
             ],
