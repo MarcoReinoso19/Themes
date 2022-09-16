@@ -1,0 +1,35 @@
+//////UBUNTU///////
+--LS Icons for ubuntu
+https://github.com/Yash-Handa/logo-ls/releases/tag/v1.3.7
+
+--Ver version del sistemas
+uname -m
+
+--ver ruta home
+pwd
+
+--pasar archivo descargado en windows a ubuntu
+cp /mnt/c/users/marco/Downloads/logo-ls_Linux_x86_64.tar.gz /home/mr
+
+--unzip file
+tar -xzf logo-ls_Linux_x86_64.tar.gz
+
+--copiar archivo  a local bin
+sudo cp logo-ls /usr/local/bin
+
+#use command logo-ls instead ls
+
+create custom command abbreviations
+vi ~/.profile
+
+#insertar:
+
+alias ils='logo-ls'
+alias ila='logo-ls -A'
+alias ill='logo-ls -al'
+# equivalents with Git Status on by Default
+alias ilsg='logo-ls -D'
+alias ilag='logo-ls -AD'
+alias illg='logo-ls -alD'
+
+
